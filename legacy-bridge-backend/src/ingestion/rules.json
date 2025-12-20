@@ -1,0 +1,14 @@
+[
+  {
+    "category": "eCommerce",
+    "keywords": ["AMZN", "EBAY", "SHOPIFY", "WALMART"]
+  },
+  {
+    "category": "Transport & Food",
+    "keywords": ["STARBUCKS", "UBER", "LYFT", "DOORDASH", "MCDONALDS"]
+  },
+  {
+    "category": "Software & Services",
+    "keywords": ["AWS", "DIGITALOCEAN", "ADOBE", "GOOGLE"]
+  }
+]
