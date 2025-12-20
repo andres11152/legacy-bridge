@@ -1,0 +1,30 @@
+<transactions>
+  <transaction>
+    <txn_id>tx_001</txn_id>
+    <description>AMZN Mktp US*123</description>
+    <amount>120.50</amount>
+    <currency>USD</currency>
+    <date>2023/10/01</date>
+  </transaction>
+  <transaction>
+    <txn_id>tx_002</txn_id>
+    <description>Starbucks Store 2291</description>
+    <amount>$5.50</amount>
+    <currency>USD</currency>
+    <date>Oct 02, 2023</date>
+  </transaction>
+  <transaction>
+    <txn_id>tx_003</txn_id>
+    <description>PAYPAL *EBAY</description>
+    <amount>1200.00</amount>
+    <currency>EUR</currency>
+    <date>2023-10-03</date>
+  </transaction>
+  <transaction>
+    <txn_id>tx_004</txn_id>
+    <description>PAYPAL *EBAY</description>
+    <amount>1200.00</amount>
+    <currency>EUR</currency>
+    <date>2023-10-03</date>
+  </transaction>
+</transactions>
