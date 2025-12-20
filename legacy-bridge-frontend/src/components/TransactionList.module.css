@@ -1,0 +1,167 @@
+.tableContainer {
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
+
+  /* Responsive Table Scroll */
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  white-space: nowrap; /* Prevent awkward wrapping */
+}
+
+.table th {
+  background: rgba(30, 41, 59, 0.5);
+  padding: 1rem 1.5rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.table tbody tr {
+  transition: all 0.2s ease;
+  border-bottom: 1px solid rgba(51, 65, 85, 0.3);
+}
+
+.table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background: rgba(56, 189, 248, 0.05); /* Slight accent hover */
+}
+
+.table td {
+  padding: 1.25rem 1.5rem;
+  color: var(--color-text-primary);
+  vertical-align: middle;
+}
+
+.dateCell {
+  color: var(--color-text-secondary);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.95rem;
+}
+
+.merchantName {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.merchantCell {
+  color: var(--color-text-primary);
+}
+
+.amountCell {
+  text-align: right;
+  font-weight: 600;
+  font-family: inherit;
+  letter-spacing: -0.02em;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.badgeEcommerce {
+  background: rgba(168, 85, 247, 0.15); /* Purple tint */
+  color: #d8b4fe;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.badgeTransport {
+  background: rgba(14, 165, 233, 0.15); /* Blue tint */
+  color: #7dd3fc;
+  border: 1px solid rgba(14, 165, 233, 0.3);
+}
+
+.badgeDefault {
+  background: rgba(148, 163, 184, 0.15);
+  color: #cbd5e1;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.emptyState {
+  background: var(--color-bg-secondary);
+  padding: 4rem;
+  text-align: center;
+  color: var(--color-text-secondary);
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+}
+
+/* --- Mobile Card View Logic --- */
+
+.cardList {
+  display: none; /* Hidden by default on Desktop */
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card {
+  background: var(--color-bg-secondary);
+  border-radius: 12px;
+  padding: 1.25rem;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-small);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cardMerchant {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--color-text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.cardDate {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+.cardAmount {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.cardBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(51, 65, 85, 0.3);
+}
+
+@media (max-width: 768px) {
+  .tableContainer {
+    display: none; /* Hide table on mobile */
+  }
+
+  .cardList {
+    display: flex; /* Show cards on mobile */
+  }
+}

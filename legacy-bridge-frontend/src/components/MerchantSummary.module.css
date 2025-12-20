@@ -1,0 +1,88 @@
+.container {
+  margin-top: 3rem;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.summaryCard {
+  background: var(
+    --color-bg-secondary
+  ); /* Corrected variable name from --bg-secondary */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table th {
+  background: rgba(30, 41, 59, 0.5);
+  padding: 1rem 1.5rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.table tbody tr {
+  border-bottom: 1px solid rgba(51, 65, 85, 0.3);
+  transition: background 0.2s;
+}
+
+.table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.table tbody tr:hover {
+  background: rgba(56, 189, 248, 0.05);
+}
+
+.table td {
+  padding: 1.25rem 1.5rem;
+  color: var(--color-text-primary);
+  vertical-align: middle;
+}
+
+.merchantName {
+  font-weight: 500;
+}
+
+.amountCell {
+  text-align: right;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.emptyState {
+  background: var(--color-bg-secondary);
+  padding: 4rem;
+  text-align: center;
+  color: var(--color-text-secondary);
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  /* Unlike TransactionList, we DO NOT hide the table here. 
+     Instead, we ensure it remains a single cohesive card (The .summaryCard container)
+     and adjust internal spacing if needed.
+  */
+
+  .table th,
+  .table td {
+    padding: 1rem; /* Slightly tighter padding on mobile */
+  }
+}
