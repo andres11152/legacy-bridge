@@ -1,0 +1,39 @@
+{
+  "name": "legacy-bridge-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "ingest": "node src/ingestion/ingestionMain.js",
+    "db:generate": "prisma generate --schema src/prisma/schema.prisma",
+    "db:migrate": "prisma migrate dev --schema src/prisma/schema.prisma",
+    "db:studio": "prisma studio --schema src/prisma/schema.prisma"
+  },
+  "prisma": {
+    "schema": "src/prisma/schema.prisma"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.19",
+    "decimal.js": "^10.6.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.2.1",
+    "helmet": "^8.1.0",
+    "morgan": "^1.10.1",
+    "xml2js": "^0.6.2",
+    "zod": "^4.2.1"
+  },
+  "devDependencies": {
+    "@prisma/client": "^5.22.0",
+    "eslint": "^9.39.2",
+    "nodemon": "^3.1.11",
+    "prettier": "^3.7.4",
+    "prisma": "^5.22.0"
+  }
+}
