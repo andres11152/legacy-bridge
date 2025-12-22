@@ -171,8 +171,8 @@ CREATE TABLE "transactions" (
 1. **Clone the repository**
 
    ```bash
-   git clone <your-repo-url>
-   cd legacy-bridge-backend
+   git clone https://github.com/andres11152/legacy-bridge.git
+   cd legacy-bridge/legacy-bridge-backend
    ```
 
 2. **Install dependencies**
