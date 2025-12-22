@@ -98,7 +98,7 @@ npm run dev             # Start Vite dev server on port 5173
 
 **Duration:** 3 minutes  
 **Audience:** Acme Corp stakeholders  
-**Link:** `[TO BE ADDED]`
+**Link:** [Watch Video (Google Drive)](https://drive.google.com/file/d/1jih4kgj5X887WTBCXq0JEIaSzxIC929Z/view?usp=drive_link)
 
 Demonstrates how the categorization rules help visualize corporate spending through the dashboard.
 
@@ -108,7 +108,7 @@ Demonstrates how the categorization rules help visualize corporate spending thro
 
 **Duration:** 5 minutes  
 **Audience:** Internal engineering team  
-**Link:** `[TO BE ADDED]`
+**Link:** [Watch Video (Google Drive)](https://drive.google.com/file/d/100IpeB2D8KVREf5rGy2I4t8NcJdXWgVf/view?usp=drive_link)
 
 Explains the architecture, XML parsing strategy, database normalization, and rule engine configuration.
 
