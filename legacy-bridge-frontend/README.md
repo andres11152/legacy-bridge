@@ -49,18 +49,18 @@ Displays all transactions with:
 
 1. **Install dependencies**
 
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 
 2. **Start development server**
 
-   ```bash
-   npm run dev
-   ```
+```bash
+npm run dev
+```
 
 3. **Access the application**
-   Open `http://localhost:5173` in your browser
+Open `http://localhost:5173` in your browser
 
 ### Production Build
 
@@ -73,33 +73,33 @@ npm run preview
 
 The frontend communicates with the backend via two endpoints:
 
-| Endpoint             | Method | Description                                                         |
+| Endpoint | Method | Description |
 | -------------------- | ------ | ------------------------------------------------------------------- |
-| `/transactions`      | GET    | Fetch all transactions (with optional `?category=eCommerce` filter) |
-| `/merchants/summary` | GET    | Fetch aggregated spending by merchant                               |
+| `/transactions` | GET | Fetch all transactions (with optional `?category=eCommerce` filter) |
+| `/merchants/summary` | GET | Fetch aggregated spending by merchant |
 
-**Proxy Configuration:**  
+**Proxy Configuration:**
 `vite.config.js` proxies API calls to `http://localhost:3001` during development.
 
 ## Project Structure
 
 ```
 src/
-├── components/          # React components
-│   ├── Header.jsx       # Title + Category Filter
-│   ├── TransactionList.jsx  # Main table/card view
-│   └── MerchantSummary.jsx  # Aggregated merchant data
-├── controllers/         # Data fetching logic
-│   └── TransactionsController.jsx
-├── services/            # API layer
-│   ├── apiService.js    # Axios instance
-│   └── transactionService.js
-├── utils/               # Helper functions
-│   └── formatters.js    # Currency/Date formatting
-├── routes/              # React Router setup
-│   └── AppRoutes.jsx
-├── App.jsx              # Root component
-└── main.jsx             # Entry point
+├── components/ # React components
+│ ├── Header.jsx # Title + Category Filter
+│ ├── TransactionList.jsx # Main table/card view
+│ └── MerchantSummary.jsx # Aggregated merchant data
+├── controllers/ # Data fetching logic
+│ └── TransactionsController.jsx
+├── services/ # API layer
+│ ├── apiService.js # Axios instance
+│ └── transactionService.js
+├── utils/ # Helper functions
+│ └── formatters.js # Currency/Date formatting
+├── routes/ # React Router setup
+│ └── AppRoutes.jsx
+├── App.jsx # Root component
+└── main.jsx # Entry point
 ```
 
 ## Design Philosophy
@@ -110,10 +110,10 @@ Per the challenge requirements:
 
 This frontend prioritizes:
 
-- ✅ **Separation of Concerns**: Presentation (Components) vs Data (Services) vs State (Controllers)
-- ✅ **Reusable Utilities**: Currency/Date formatters handle backend string formats gracefully
-- ✅ **Error Handling**: Loading states, error boundaries
-- ❌ **Not prioritized:** Complex animations, design systems, theming
+- **Separation of Concerns:** Presentation (Components) vs Data (Services) vs State (Controllers)
+- **Reusable Utilities:** Currency/Date formatters handle backend string formats gracefully
+- **Error Handling:** Loading states, error boundaries
+- **Not prioritized:** Complex animations, design systems, theming
 
 ## Key Implementation Details
 
@@ -124,14 +124,14 @@ The backend returns amounts as **strings** (to preserve Decimal precision during
 ```javascript
 // src/utils/formatters.js
 export const formatCurrency = (amount, currency = "USD") => {
-  const numericAmount =
-    typeof amount === "string" ? parseFloat(amount) : amount;
-  if (isNaN(numericAmount)) return "N/A";
+const numericAmount =
+typeof amount === "string" ? parseFloat(amount) : amount;
+if (isNaN(numericAmount)) return "N/A";
 
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: currency,
-  }).format(numericAmount);
+return new Intl.NumberFormat("en-US", {
+style: "currency",
+currency: currency,
+}).format(numericAmount);
 };
 ```
 
@@ -141,13 +141,13 @@ export const formatCurrency = (amount, currency = "USD") => {
 
 ## Scripts Reference
 
-| Command           | Description                          |
+| Command | Description |
 | ----------------- | ------------------------------------ |
-| `npm install`     | Install dependencies                 |
-| `npm run dev`     | Start development server (port 5173) |
-| `npm run build`   | Build for production                 |
-| `npm run preview` | Preview production build locally     |
-| `npm run lint`    | Run ESLint checks                    |
+| `npm install` | Install dependencies |
+| `npm run dev` | Start development server (port 5173) |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build locally |
+| `npm run lint` | Run ESLint checks |
 
 ## Notes for Evaluators
 
