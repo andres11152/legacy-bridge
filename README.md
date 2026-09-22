@@ -6,49 +6,49 @@ This project demonstrates a complete fintech data pipeline that ingests, normali
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 legacy-bridge/
-├── legacy-bridge-backend/    # Node.js + Express + PostgreSQL
-│   ├── src/
-│   │   ├── ingestion/        # XML parsing, sanitization, rule engine
-│   │   ├── db/               # Database client instantiation
-│   │   ├── prisma/           # Prisma Schema (Entities definition)
-│   │   ├── routes/           # API Routes definitions
-│   │   ├── utils/            # Logger, Zod schemas
-│   │   └── server.js         # REST API with security middleware
-│   └── README.md             # Backend documentation
+├── legacy-bridge-backend/ # Node.js + Express + PostgreSQL
+│ ├── src/
+│ │ ├── ingestion/ # XML parsing, sanitization, rule engine
+│ │ ├── db/ # Database client instantiation
+│ │ ├── prisma/ # Prisma Schema (Entities definition)
+│ │ ├── routes/ # API Routes definitions
+│ │ ├── utils/ # Logger, Zod schemas
+│ │ └── server.js # REST API with security middleware
+│ └── README.md # Backend documentation
 │
-└── legacy-bridge-frontend/   # React + Vite
-    ├── src/
-    │   ├── components/       # UI components (TransactionList, Header, etc.)
-    │   ├── controllers/      # Smart components with state management
-    │   ├── services/         # API layer (Axios)
-    │   └── utils/            # Formatters (currency, dates)
-    └── README.md             # Frontend documentation
+└── legacy-bridge-frontend/ # React + Vite
+├── src/
+│ ├── components/ # UI components (TransactionList, Header, etc.)
+│ ├── controllers/ # Smart components with state management
+│ ├── services/ # API layer (Axios)
+│ └── utils/ # Formatters (currency, dates)
+└── README.md # Frontend documentation
 ```
 
-> **📌 Implementation Note on Prisma & Entities:**
+> **Implementation Note on Prisma & Entities:**
 > Per the project requirements, we implemented the **exact SQL schema** provided. We use **Prisma** as the ORM to manage these entities. The `schema.prisma` file defines the core business entities (`Merchant`, `Transaction`) and ensures strict adherence to the requested database structure, while Prisma Client handles the data access layer safely specificities.
 
 ---
 
-## 🎯 Challenge Requirements Met
+## Challenge Requirements Met
 
-| Requirement                | Implementation                                      | Status |
+| Requirement | Implementation | Status |
 | -------------------------- | --------------------------------------------------- | ------ |
-| **XML Parsing**            | `xml2js` with edge case handling (array vs object)  | ✅     |
-| **Dirty Data Cleaning**    | Regex + `Decimal.js` for amounts, `dayjs` for dates | ✅     |
-| **PostgreSQL Schema**      | Normalized `Merchants` + `Transactions` with FK     | ✅     |
-| **Extensible Rule Engine** | JSON-based configuration (`rules.json`)             | ✅     |
-| **Frontend (React)**       | Table view + Category filter + Merchant summary     | ✅     |
-| **Error Logging**          | Structured JSON logs with context preservation      | ✅     |
-| **Security**               | Helmet, Rate Limiting, Zod validation               | ✅     |
+| **XML Parsing** | `xml2js` with edge case handling (array vs object) | Done |
+| **Dirty Data Cleaning** | Regex + `Decimal.js` for amounts, `dayjs` for dates | Done |
+| **PostgreSQL Schema** | Normalized `Merchants` + `Transactions` with FK | Done |
+| **Extensible Rule Engine** | JSON-based configuration (`rules.json`) | Done |
+| **Frontend (React)** | Table view + Category filter + Merchant summary | Done |
+| **Error Logging** | Structured JSON logs with context preservation | Done |
+| **Security** | Helmet, Rate Limiting, Zod validation | Done |
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -61,9 +61,9 @@ legacy-bridge/
 git clone https://github.com/andres11152/legacy-bridge.git
 cd legacy-bridge/legacy-bridge-backend
 npm install
-npm run db:migrate      # Apply Prisma migrations (development only)
-npm run ingest          # Parse XML and populate database
-npm start               # Start API on port 3001
+npm run db:migrate # Apply Prisma migrations (development only)
+npm run ingest # Parse XML and populate database
+npm start # Start API on port 3001
 ```
 
 **Note:** The `db:migrate` command runs `prisma migrate dev`, which is for local development. The Render database already contains pre-loaded demo data, so you can view transactions immediately without running migrations or ingestion.
@@ -73,37 +73,37 @@ npm start               # Start API on port 3001
 ```bash
 cd legacy-bridge-frontend
 npm install
-npm run dev             # Start Vite dev server on port 5173
+npm run dev # Start Vite dev server on port 5173
 ```
 
 **Important:** Ensure the backend is running before accessing the frontend.
 
 ---
 
-## 📚 Detailed Documentation
+## Detailed Documentation
 
 - **[Backend Documentation](./legacy-bridge-backend/README.md)**
 
-  - Architecture diagram (Mermaid)
-  - Database schema explanation
-  - Data normalization strategy
-  - Rule engine configuration
-  - Error handling approach
+- Architecture diagram (Mermaid)
+- Database schema explanation
+- Data normalization strategy
+- Rule engine configuration
+- Error handling approach
 
 - **[Frontend Documentation](./legacy-bridge-frontend/README.md)**
-  - Component structure
-  - API integration
-  - Currency formatting logic
-  - Responsive design approach
+- Component structure
+- API integration
+- Currency formatting logic
+- Responsive design approach
 
 ---
 
-## 🎥 Video Walkthroughs
+## Video Walkthroughs
 
 ### Video A: Product Deliverable (Client-Facing)
 
-**Duration:** 3 minutes  
-**Audience:** Acme Corp stakeholders  
+**Duration:** 3 minutes
+**Audience:** Acme Corp stakeholders
 **Link:** [Watch Video (Google Drive)](https://drive.google.com/file/d/1jih4kgj5X887WTBCXq0JEIaSzxIC929Z/view?usp=drive_link)
 
 Demonstrates how the categorization rules help visualize corporate spending through the dashboard.
@@ -112,15 +112,15 @@ Demonstrates how the categorization rules help visualize corporate spending thro
 
 ### Video B: Technical Deep Dive (Engineer-Facing)
 
-**Duration:** 5 minutes  
-**Audience:** Internal engineering team  
+**Duration:** 5 minutes
+**Audience:** Internal engineering team
 **Link:** [Watch Video (Google Drive)](https://drive.google.com/file/d/100IpeB2D8KVREf5rGy2I4t8NcJdXWgVf/view?usp=drive_link)
 
 Explains the architecture, XML parsing strategy, database normalization, and rule engine configuration.
 
 ---
 
-## 🏗️ Architecture Highlights
+## Architecture Highlights
 
 ### Layered Design
 
@@ -140,10 +140,10 @@ Explains the architecture, XML parsing strategy, database normalization, and rul
 
 ---
 
-## 🔒 Security Notice
+## Security Notice
 
-> **⚠️ For Evaluators:**  
-> This repository includes a `.env` file with live database credentials for **demonstration purposes only**.  
+> **For Evaluators:**
+> This repository includes a `.env` file with live database credentials for **demonstration purposes only**.
 > In production, credentials would be managed via:
 >
 > - Platform environment variables (Render, Vercel, AWS Parameter Store)
@@ -154,32 +154,32 @@ Explains the architecture, XML parsing strategy, database normalization, and rul
 
 ---
 
-## 📊 Database Schema
+## Database Schema
 
 ```sql
 -- Merchants (normalized entity)
 CREATE TABLE "merchants" (
-    "id" SERIAL PRIMARY KEY,
-    "name" TEXT NOT NULL,
-    "normalized_name" TEXT UNIQUE NOT NULL
+"id" SERIAL PRIMARY KEY,
+"name" TEXT NOT NULL,
+"normalized_name" TEXT UNIQUE NOT NULL
 );
 
 -- Transactions (with foreign key to merchants)
 CREATE TABLE "transactions" (
-    "id" SERIAL PRIMARY KEY,
-    "txn_id" TEXT UNIQUE NOT NULL,
-    "merchant_id" INTEGER REFERENCES "merchants"("id"),
-    "amount" DECIMAL(12,2) NOT NULL,
-    "currency" CHAR(3) NOT NULL,
-    "category" TEXT NOT NULL,
-    "txn_date" DATE NOT NULL,
-    "raw_description" TEXT NOT NULL
+"id" SERIAL PRIMARY KEY,
+"txn_id" TEXT UNIQUE NOT NULL,
+"merchant_id" INTEGER REFERENCES "merchants"("id"),
+"amount" DECIMAL(12,2) NOT NULL,
+"currency" CHAR(3) NOT NULL,
+"category" TEXT NOT NULL,
+"txn_date" DATE NOT NULL,
+"raw_description" TEXT NOT NULL
 );
 ```
 
 ---
 
-## 🧪 Testing the Solution
+## Testing the Solution
 
 ### 1. Verify Backend API
 
@@ -202,8 +202,8 @@ Edit `legacy-bridge-backend/src/ingestion/rules.json`:
 
 ```json
 {
-  "category": "Subscriptions",
-  "keywords": ["NETFLIX", "SPOTIFY"]
+"category": "Subscriptions",
+"keywords": ["NETFLIX", "SPOTIFY"]
 }
 ```
 
@@ -211,7 +211,7 @@ Re-run ingestion to see new category applied.
 
 ---
 
-## 🚧 Future Roadmap
+## Future Roadmap
 
 For ultra-high-scale scenarios (millions of transactions/hour):
 
@@ -222,8 +222,8 @@ For ultra-high-scale scenarios (millions of transactions/hour):
 
 ---
 
-## 📞 Contact
+## Contact
 
 **Submitted by:** Andres Betancourt O.
-**Challenge:** Fuse Solutions Engineer Take-Home  
+**Challenge:** Fuse Solutions Engineer Take-Home
 **Repository:** [github.com/andres11152/legacy-bridge](https://github.com/andres11152/legacy-bridge)
